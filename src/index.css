@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.headerText {
+  text-align: center;
+  padding: 4rem;
+  height: 20vh;
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.headerContainer {
+  background-color: green;
+}
+
+.bookview {
+  display: flex;
+  justify-content: center;
+}
+.formText {
+  text-align: center;
+}
