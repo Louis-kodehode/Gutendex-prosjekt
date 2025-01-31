@@ -14,9 +14,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <HomeView /> },
-      { path: "/result/:search", element: <ResultView /> },
-      { path: "book/:id", element: <BookPageView /> },
+      { path: "/Gutendex-prosjekt/", element: <HomeView /> },
+      { path: "/Gutendex-prosjekt/result/:search", element: <ResultView /> },
+      { path: "/Gutendex-prosjekt/book/:id", element: <BookPageView /> },
     ],
   },
 ]);

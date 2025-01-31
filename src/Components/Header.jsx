@@ -8,7 +8,7 @@ export default function Header() {
 
   function handleSearch(e, search) {
     e.preventDefault();
-    navigate(`/result/search=${search}`);
+    navigate(`/Gutendex-prosjekt/result/search=${search}`);
     console.log(search);
   }
 
@@ -22,23 +22,22 @@ export default function Header() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <input type="submit" 
-        />
+        <input type="submit" />
       </form>
       <div className="headerText">
-        <Link to="/result/topic=Fiction">Fiction </Link>
-        <Link to="/result/topic=Mystery">Mystery </Link>
-        <Link to="/result/topic=Thriller">Thriller </Link>
-        <Link to="/result/topic=Romance">Romance </Link>
-        <Link to="/result/topic=Fantasy">Fantasy </Link>
-        <Link to="/result/topic=Morality">Morality </Link>
-        <Link to="/result/topic=Society">Society </Link>
-        <Link to="/result/topic=Power">Power </Link>
-        <Link to="/result/topic=Justice">Justice </Link>
-        <Link to="/result/topic=Adventure">Adventure </Link>
-        <Link to="/result/topic=Tragedy">Tragedy </Link>
-        <Link to="/result/topic=War">War </Link>
-        <Link to="/result/topic=Philosophy">Philosophy </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Fiction">Fiction </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Mystery">Mystery </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Thriller">Thriller </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Romance">Romance </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Fantasy">Fantasy </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Morality">Morality </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Society">Society </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Power">Power </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Justice">Justice </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Adventure">Adventure </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Tragedy">Tragedy </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=War">War </Link>
+        <Link to="/Gutendex-prosjekt/result/topic=Philosophy">Philosophy </Link>
       </div>
     </div>
   );

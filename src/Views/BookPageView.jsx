@@ -35,9 +35,9 @@ export default function BookPageView() {
     <p>loading...</p>
   ) : (
     <>
-      <div key={book.id} style={{padding:"5rem"}}>
+      <div key={book.id} style={{ padding: "5rem" }}>
         {/* <Link to={`/book/${book.id}`}> */}
-          <img src={book.formats["image/jpeg"]} alt={book.title} />
+        <img src={book.formats["image/jpeg"]} alt={book.title} />
         {/* </Link> */}
         <h3>{book.title}</h3>
         <p>{book.authors.map((author) => author.name).join(", ")}</p>

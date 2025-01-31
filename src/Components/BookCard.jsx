@@ -5,7 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export default function BookCard({ image, title, name, id }) {
   return (
     <div>
-      <Link to={`/book/${id}`}>
+      <Link to={`/Gutendex-prosjekt/book/${id}`}>
         <div>
           <img src={image} alt={title} />
           <h2>{title}</h2>
