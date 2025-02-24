@@ -8,6 +8,7 @@ import BookView from "./Views/BookView";
 import ResultView from "./Views/ResultView";
 import { AppContext } from "./App";
 import BookPageView from "./Views/BookPageView";
+import FavouritesView from "./Views/FavouritesView";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/Gutendex-prosjekt/", element: <HomeView /> },
       { path: "/Gutendex-prosjekt/result/:search", element: <ResultView /> },
       { path: "/Gutendex-prosjekt/book/:id", element: <BookPageView /> },
+      { path: "/Gutendex-prosjekt/Favourite", element: <FavouritesView /> },
     ],
   },
 ]);

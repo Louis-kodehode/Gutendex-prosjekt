@@ -23,3 +23,9 @@
 .formText {
   text-align: center;
 }
+
+.result-button {
+  height: 25px;
+  width: 100px;
+  margin: 30px;
+}

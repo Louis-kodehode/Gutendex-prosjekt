@@ -5,8 +5,17 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function BookPageView() {
-  const { book, setBook, loading, setLoading, setError, result, setResult } =
-    useContext(AppContext);
+  const {
+    book,
+    setBook,
+    loading,
+    setLoading,
+    setError,
+    result,
+    setResult,
+    setFavourites,
+    favourites,
+  } = useContext(AppContext);
   const params = useParams();
 
   useEffect(() => {
@@ -44,7 +53,26 @@ export default function BookPageView() {
         <p>Download count {book.download_count}</p>
         <p>Category {book.subjects}</p>
         <p>Language: {book.languages.join(", ")}</p>
-        <Link to={book.formats["text/html"]}>Html</Link>
+        <Link to={book.formats["text/html"]}>Book Title</Link>
+        <button
+          onClick={() => {
+            setFavourites((prev) => {
+              const bookInList = prev.find((e) => e.id === book.id);
+
+              if (bookInList) {
+                return prev.toSpliced(prev.indexOf(bookInList), 1);
+              } else {
+                return [...prev, book];
+              }
+              // removes book if already in the list
+            });
+            console.log(favourites);
+          }}
+        >
+          {favourites.find((e) => e.id === book.id)
+            ? "Unfavourite"
+            : "Favourite"}
+        </button>
       </div>
     </>
   );

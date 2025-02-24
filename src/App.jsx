@@ -12,6 +12,7 @@ export default function App() {
   const [error, setError] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedBook, setSelectedBook] = useState(null);
+  const [favourites, setFavourites] = useState([]);
 
   return (
     <AppContext.Provider
@@ -22,12 +23,14 @@ export default function App() {
         error,
         loading,
         selectedBook,
+        favourites,
         setSearch,
         setBook,
         setError,
         setLoading,
         setSelectedBook,
         setResult,
+        setFavourites,
       }}
     >
       <>
