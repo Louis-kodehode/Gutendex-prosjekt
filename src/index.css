@@ -29,3 +29,74 @@
   width: 100px;
   margin: 30px;
 }
+.favourite {
+  color: red;
+}
+.result-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-card-view {
+  border: 2px solid black;
+  margin: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-view > * {
+  height: 100%;
+}
+
+.book-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  color: black;
+  text-decoration: underline white;
+}
+
+.book-card-content img {
+  box-shadow: 0px 0px 30px lightgray;
+  object-fit: contain;
+  max-width: 200px;
+  max-height: 300px;
+}
+.result-view-container {
+  align-items: center;
+}
+
+.book-page-container {
+  display: flex;
+}
+
+.book-page-text {
+  min-width: 200px;
+  padding: 0px 20px;
+}
+
+.book-page-title {
+  margin-bottom: 20px;
+}
+.book-page-img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.book-page-img {
+  box-shadow: 0px 10px 10px 5px;
+  color: lightgrey;
+}
+
+.book-page-button {
+  border-radius: 20px;
+  width: 100px;
+  background-color: lightgrey;
+  color: black;
+  padding: 5px;
+}

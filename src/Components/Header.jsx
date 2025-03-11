@@ -38,10 +38,11 @@ export default function Header() {
         <Link to="/Gutendex-prosjekt/result/topic=Tragedy">Tragedy </Link>
         <Link to="/Gutendex-prosjekt/result/topic=War">War </Link>
         <Link to="/Gutendex-prosjekt/result/topic=Philosophy">Philosophy </Link>
+        <Link to="/Gutendex-prosjekt/Favourite" className="favourite">
+          Favourites
+        </Link>
       </div>
-      <div>
-        <Link to="/Gutendex-prosjekt/Favourite">Favourites</Link>
-      </div>
+      <div></div>
     </div>
   );
 }

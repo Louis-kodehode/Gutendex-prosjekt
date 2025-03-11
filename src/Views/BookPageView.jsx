@@ -44,36 +44,54 @@ export default function BookPageView() {
     <p>loading...</p>
   ) : (
     <>
-      <div key={book.id} style={{ padding: "5rem" }}>
-        {/* <Link to={`/book/${book.id}`}> */}
-        <img src={book.formats["image/jpeg"]} alt={book.title} />
-        {/* </Link> */}
-        <h3>{book.title}</h3>
-        <p>{book.authors.map((author) => author.name).join(", ")}</p>
-        <p>Download count {book.download_count}</p>
-        <p>Category {book.subjects}</p>
-        <p>Language: {book.languages.join(", ")}</p>
-        <Link to={book.formats["text/html"]}>Book Title</Link>
-        <button
-          onClick={() => {
-            setFavourites((prev) => {
-              const bookInList = prev.find((e) => e.id === book.id);
-
-              if (bookInList) {
-                return prev.toSpliced(prev.indexOf(bookInList), 1);
-              } else {
-                return [...prev, book];
-              }
-              // removes book if already in the list
-            });
-            console.log(favourites);
-          }}
+      {!loading && book.formats && (
+        <div
+          className="book-page-container"
+          key={book.id}
+          style={{ padding: "5rem" }}
         >
-          {favourites.find((e) => e.id === book.id)
-            ? "Unfavourite"
-            : "Favourite"}
-        </button>
-      </div>
+          {/* <Link to={`/book/${book.id}`}> */}
+          <div className="book-page-img-container">
+            <img
+              className="book-page-img"
+              src={book.formats["image/jpeg"]}
+              alt={book.title}
+            />
+            {/* </Link> */}
+
+            <button
+              className="book-page-button"
+              onClick={() => {
+                setFavourites((prev) => {
+                  const bookInList = prev.find((e) => e.id === book.id);
+
+                  // removes book if already in the list
+                  if (bookInList) {
+                    return prev.toSpliced(prev.indexOf(bookInList), 1);
+                  } else {
+                    return [...prev, book];
+                  }
+                });
+                console.log(favourites);
+              }}
+            >
+              {favourites.find((e) => e.id === book.id)
+                ? "Unfavourite"
+                : "Favourite"}
+            </button>
+          </div>
+          <div className="book-page-text">
+            <h2 className="book-page-title">{book.title}</h2>
+            <p>{book.authors.map((author) => author.name).join(", ")}</p>
+            <p>Download count {book.download_count}</p>
+            <p>
+              Category <br /> {book.subjects.join(", ")}{" "}
+            </p>
+            <p>Language: {book.languages.join(", ")}</p>
+            <Link to={book.formats["text/html"]}>Read book online</Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

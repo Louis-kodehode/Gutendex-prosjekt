@@ -40,31 +40,33 @@ export default function ResultView() {
 
   return (
     <>
-      {console.log(result)}
-      <h1>ResultView</h1>
-      {loading && <p>Loading...</p>}
-      {result && (
-        <>
-          <ol className="resultview">
-            {console.log(result)}
-            {result.results.map((e) => (
-              // <li key={e.id}>{e.title}</li>
+      <div className="result-view-container">
+        {console.log(result)}
+        <h1>ResultView</h1>
+        {loading && <p>Loading...</p>}
+        {result && (
+          <>
+            <ol className="result-view">
+              {console.log(result)}
+              {result.results.map((e) => (
+                // <li key={e.id}>{e.title}</li>
 
-              <BookCard
-                image={e.formats["image/jpeg"]}
-                title={e.title}
-                id={e.id}
-              />
-            ))}
-          </ol>
-          {result.next && (
-            <Link to={`/Gutendex-prosjekt/result/${result.next.slice(28)}`}>
-              NEXT
-            </Link>
-          )}
-        </>
-      )}
-      <button></button>
+                <BookCard
+                  image={e.formats["image/jpeg"]}
+                  title={e.title}
+                  id={e.id}
+                />
+              ))}
+            </ol>
+
+            {result.next && (
+              <Link to={`/Gutendex-prosjekt/result/${result.next.slice(28)}`}>
+                NEXT
+              </Link>
+            )}
+          </>
+        )}
+      </div>
     </>
   );
 }
