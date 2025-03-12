@@ -58,27 +58,28 @@ export default function BookPageView() {
               alt={book.title}
             />
             {/* </Link> */}
+            <div className="book-page-button-container">
+              <button
+                className="book-page-button"
+                onClick={() => {
+                  setFavourites((prev) => {
+                    const bookInList = prev.find((e) => e.id === book.id);
 
-            <button
-              className="book-page-button"
-              onClick={() => {
-                setFavourites((prev) => {
-                  const bookInList = prev.find((e) => e.id === book.id);
-
-                  // removes book if already in the list
-                  if (bookInList) {
-                    return prev.toSpliced(prev.indexOf(bookInList), 1);
-                  } else {
-                    return [...prev, book];
-                  }
-                });
-                console.log(favourites);
-              }}
-            >
-              {favourites.find((e) => e.id === book.id)
-                ? "Unfavourite"
-                : "Favourite"}
-            </button>
+                    // removes book if already in the list
+                    if (bookInList) {
+                      return prev.toSpliced(prev.indexOf(bookInList), 1);
+                    } else {
+                      return [...prev, book];
+                    }
+                  });
+                  console.log(favourites);
+                }}
+              >
+                {favourites.find((e) => e.id === book.id)
+                  ? "Unfavourite"
+                  : "Favourite"}
+              </button>
+            </div>
           </div>
           <div className="book-page-text">
             <h2 className="book-page-title">{book.title}</h2>

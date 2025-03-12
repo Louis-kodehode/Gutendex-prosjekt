@@ -7,7 +7,7 @@
 .headerText {
   text-align: center;
   padding: 4rem;
-  height: 20vh;
+  height: 20%;
   background-color: blueviolet;
   color: whitesmoke;
 }
@@ -36,6 +36,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 13px;
 }
 
 .book-card-view {
@@ -44,10 +45,13 @@
   width: 250px;
   display: flex;
   flex-direction: column;
+  border-radius: 20px;
 }
 
 .book-card-view > * {
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .book-card-content {
@@ -91,6 +95,8 @@
 .book-page-img {
   box-shadow: 0px 10px 10px 5px;
   color: lightgrey;
+  max-height: 300px;
+  max-width: 200px;
 }
 
 .book-page-button {
@@ -99,4 +105,35 @@
   background-color: lightgrey;
   color: black;
   padding: 5px;
+}
+
+.button-container {
+  justify-content: center;
+  display: flex;
+}
+
+.next-button {
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .book-page-img-container {
+    padding: 5px;
+  }
+  .book-page-button-container {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0px 50px 0px;
+  }
+  .book-page-container {
+    flex-direction: column;
+  }
+  .book-page-button {
+  }
+  .book-page-title {
+    text-align: center;
+  }
 }

@@ -6,6 +6,10 @@ import BookCard from "../Components/BookCard";
 import { Link } from "react-router-dom";
 
 export default function ResultView() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   const params = useParams();
 
   console.log(params.search);
@@ -58,12 +62,18 @@ export default function ResultView() {
                 />
               ))}
             </ol>
-
-            {result.next && (
-              <Link to={`/Gutendex-prosjekt/result/${result.next.slice(28)}`}>
-                NEXT
-              </Link>
-            )}
+            <div className="button-container">
+              {result.next && (
+                <Link
+                  onClick={scrollToTop}
+                  to={`/Gutendex-prosjekt/result/${result.next.slice(28)}`}
+                  className="next-button"
+                  // onclick="window={.location.href:'#top'}"
+                >
+                  NEXT
+                </Link>
+              )}
+            </div>
           </>
         )}
       </div>
