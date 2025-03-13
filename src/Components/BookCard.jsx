@@ -13,6 +13,7 @@ export default function BookCard({ image, title, name, id }) {
           {/* <FontAwesomeIcon icon={faHeart} /> */}
         </div>
       </Link>
+      {/* <div>Button placeholder</div> */}
     </div>
   );
 }
